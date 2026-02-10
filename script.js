@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     centeredSlides: true,
     watchSlidesProgress: true,
     simulateTouch: true,
-touchRatio: window.innerWidth > 768 ? -1 : 1,
+    touchRatio: window.innerWidth > 768 ? -1 : 1,
 
     coverflowEffect: {
       rotate: 0,
@@ -90,13 +90,18 @@ touchRatio: window.innerWidth > 768 ? -1 : 1,
     },
     breakpoints: {
       0: {
-        spaceBetween: 25,
+        slidesPerView: 3,
+        spaceBetween: -20,
         coverflowEffect: {
-          stretch: 110,
-          depth: 140,
+          rotate: 0,
+          stretch: 0,
+          depth: 150,
+          modifier: 1.5,
+          slideShadows: false,
         },
       },
       768: {
+        slidesPerView: "auto",
         spaceBetween: 20,
         coverflowEffect: {
           stretch: 208,
