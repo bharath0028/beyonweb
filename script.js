@@ -89,10 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     breakpoints: {
       0: {
-        spaceBetween: 25,
+        spaceBetween: 20,
         coverflowEffect: {
-          stretch: 110,
-          depth: 140,
+          stretch: 80,
+          depth: 100,
+          modifier: 1.5,
         },
       },
       768: {
