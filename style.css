@@ -1041,6 +1041,16 @@ align-items: center;
   transform: translateX(100%); /* default off screen */
 }
 
+@media (max-width: 768px) {
+  .cutsSwiper .swiper-slide,
+  .cutsSwiper .swiper-slide-prev,
+  .cutsSwiper .swiper-slide-next,
+  .cutsSwiper .swiper-slide-active {
+    transform: scale(1) !important;
+  }
+}
+
+
 /* Incoming slide */
 .slide-bot.active {
   z-index: 2;

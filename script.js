@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     centeredSlides: true,
     watchSlidesProgress: true,
     simulateTouch: true,
-    touchRatio: -1,
+touchRatio: window.innerWidth > 768 ? -1 : 1,
+
     coverflowEffect: {
       rotate: 0,
       stretch: 228,
