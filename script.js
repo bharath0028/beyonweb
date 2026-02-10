@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     spaceBetween: 30,
     loop: true,
+    loopedSlides: 12,
     speed: 600,
     navigation: {
       nextEl: ".cuts-prev",
