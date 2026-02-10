@@ -71,23 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // SWIPER 1: CUTS SLIDER (Section 4)
   // ============================================
 
-  // Cut labels for the carousel
-  const cutLabels = [
-    "OVAL",
-    "HALF MOON",
-    "EMERALD",
-    "PRINCESS",
-    "ROUND",
-    "PEAR",
-    "MARQUISE",
-    "OVAL",
-    "HALF MOON",
-    "EMERALD",
-    "PRINCESS",
-    "ROUND",
-    "PEAR",
-    "MARQUISE",
-  ];
+  // Note: derive cut label from the active slide's image alt text
 
   const cutsSwiper = new Swiper(".cutsSwiper", {
     effect: "coverflow",
@@ -128,26 +112,36 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       slideChange: function () {
-        updateCutLabel(this.realIndex);
+        updateCutLabelFromActive(this);
+      },
+      init: function () {
+        updateCutLabelFromActive(this);
       },
     },
   });
-
-  function updateCutLabel(index) {
+  function updateCutLabelFromActive(swiperInstance) {
     const labelElement = document.querySelector(".cuts-label p");
-    if (labelElement && cutLabels[index]) {
-      labelElement.textContent = cutLabels[index];
+    if (!labelElement) return;
 
-      // Add animation
-      labelElement.style.opacity = "0";
-      labelElement.style.transform = "translateY(10px)";
+    // Get the currently active slide DOM element
+    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+    if (!activeSlide) return;
 
-      setTimeout(() => {
-        labelElement.style.transition = "all 0.4s ease";
-        labelElement.style.opacity = "1";
-        labelElement.style.transform = "translateY(0)";
-      }, 100);
-    }
+    const img = activeSlide.querySelector("img");
+    const text = img ? img.alt || img.getAttribute("src") : "";
+    const display = text ? text.toString().toUpperCase() : "";
+
+    // Animate label change
+    labelElement.style.transition = "none";
+    labelElement.style.opacity = "0";
+    labelElement.style.transform = "translateY(10px)";
+
+    setTimeout(() => {
+      labelElement.textContent = display;
+      labelElement.style.transition = "all 0.4s ease";
+      labelElement.style.opacity = "1";
+      labelElement.style.transform = "translateY(0)";
+    }, 80);
   }
   window.addEventListener("load", () => {
     cutsSwiper.update();
