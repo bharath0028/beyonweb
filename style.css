@@ -517,6 +517,10 @@ padding: 17px 10px;
     transition: transform 0.6s ease;
 }
 
+.trad-right-mob {
+    display: none !important;
+}
+
 
 
 /* ============================================
@@ -1054,6 +1058,11 @@ align-items: center;
     opacity: 0.6;
   }
   
+  .trad-right-mob {
+        display: block !important;
+        width: 388px !important;
+        right: 18px;
+    }
   .cutsSwiper .swiper-slide-active {
     transform: scale(1) !important;
     opacity: 1;
@@ -1355,6 +1364,18 @@ text-align: start;
     .for-desk{
         display: none !important;
     }
+/* On smaller screens show the mobile-only tradition image and hide the desktop one */
+@media (max-width: 1120px) {
+    .trad-right-mob {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .tradition-right .for-desk {
+        display: none !important;
+    }
+}
     .for-mob{
         display: block !important;
     }
