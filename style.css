@@ -1525,3 +1525,53 @@ text-align: start;
         justify-content: center;
     }
 }
+
+.beyonlove{
+    text-align: center;
+    margin: 40px 0;
+}
+.beyonlove img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 1121px){
+    .beyonlove .for-desk{ display: block !important; max-width: 1507px; }
+    .beyonlove .for-mob{ display: none !important; }
+}
+
+@media (max-width: 1120px){
+    .beyonlove .for-desk{ display: none !important; }
+    .beyonlove .for-mob{ display: block !important; max-width: 100%;margin-top: -45px;margin-bottom: 90px; }
+    .beyonlove{ margin: 20px 0; padding: 0 10px; }
+    .beyonlove .blove-overlay{ display: none !important; }
+    .beyonlove .blove-overlay-mob{ display: block !important; }
+}
+
+.beyonlove{ position: relative; }
+.beyonlove .main-web{ display: block; width:100%; height:auto; }
+.beyonlove .blove-overlay{
+    position: absolute;
+    left: 48%;
+    bottom: 110px;
+    transform: translate(-50%, -50%);
+    max-width: 360px;
+    width: 19%;
+    z-index: 6;
+    cursor: pointer;
+}
+
+.beyonlove .blove-overlay-mob{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    bottom: 0;
+    z-index: 6;
+    cursor: pointer;
+}
+
+.beyonlove .blove-link{ display:block; position:relative; }
+
